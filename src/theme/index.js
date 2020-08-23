@@ -1,9 +1,9 @@
 export const theme = {
   colors: {
-    dark: "#0A1014",
-    grey: "#1B2329",
-    midGrey: "#353F4C",
-    lightGrey: "#7A8C99",
+    dark: "#121212",
+    grey: "#2A2A2A",
+    darkWhite: "#606060",
+    lightGrey: "#919191",
     white: "#FFFFFF",
     yellow: "#FF9F1C",
     red: "#FF4040",
@@ -13,19 +13,19 @@ export const theme = {
   font: "Roboto",
   fontWeights: {
     xs: {
-      size: "16pt",
+      size: "16px",
       weight: "400",
     },
     sm: {
-      size: "20pt",
+      size: "20px",
       weight: "500",
     },
     md: {
-      size: "24pt",
+      size: "24px",
       weight: "500",
     },
     lg: {
-      size: "80pt",
+      size: "80px",
       weight: "700",
     },
   },
