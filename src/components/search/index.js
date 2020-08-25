@@ -31,7 +31,7 @@ const Input = styled.input`
   font-size: ${(p) => p.theme.fontWeights.xs.size};
 `;
 
-const iconStyles = {
+/* const iconStyles = {
   position: "relative",
   top: "20px",
-};
+}; */

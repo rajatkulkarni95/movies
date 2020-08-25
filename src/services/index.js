@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_KEY = process.env.REACT_APP_API_KEY;
+//const API_KEY = process.env.REACT_APP_API_KEY;
 const AUTH_KEY = process.env.REACT_APP_AUTH_KEY;
 const api_endpoint = "https://api.themoviedb.org/3";
 const search_endpoint = `${api_endpoint}/search/movie?query`;

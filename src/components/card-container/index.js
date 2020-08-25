@@ -1,12 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Card } from "../card";
 import { getTrendingMovies } from "../../services";
 
 export const CardContainer = () => {
-  const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
   const [movies, setMovies] = useState([]);
-  getTrendingMovies().then(({ results }) => setMovies(results));
+
+  useEffect(() => {
+    let isMounted = true;
+    getTrendingMovies().then(({ results }) =>
+      isMounted ? setMovies(results) : null
+    );
+    console.log("useeffect ran");
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   return (
     <Wrapper>

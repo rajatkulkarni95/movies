@@ -5,16 +5,20 @@ import { GlobalStyle } from "./components/global-style";
 import { Navbar } from "./components/navigation-bar";
 import { Header } from "./components/header";
 import { Routes } from "./routes";
+import { StoreProvider } from "./context";
+import { initialState, reducer } from "./reducers";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Header />
-      <Wrapper>
-        <Navbar />
-        <Routes />
-      </Wrapper>
+      <StoreProvider reducer={reducer} initialState={initialState}>
+        <Header />
+        <Wrapper>
+          <Navbar />
+          <Routes />
+        </Wrapper>
+      </StoreProvider>
     </ThemeProvider>
   );
 }
