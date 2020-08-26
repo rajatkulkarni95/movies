@@ -3,6 +3,7 @@ import React from "react";
 import { Discover } from "../pages/Discover";
 import { Browse } from "../pages/Browse";
 import { ErrorPage } from "../pages/ErrorPage";
+import { ItemDetail } from "../pages/ItemDetail";
 
 export const Routes = () => (
   <Switch>
@@ -11,6 +12,9 @@ export const Routes = () => (
     </Route>
     <Route exact path="/browse">
       <Browse />
+    </Route>
+    <Route exact path="/movie/:id">
+      <ItemDetail />
     </Route>
     <Route>
       <ErrorPage />

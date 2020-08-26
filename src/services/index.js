@@ -11,29 +11,20 @@ const config = {
 };
 
 export const searchMovies = async (keyword) => {
-  const result = await axios
-    .get(`${search_endpoint}=${keyword}`, config)
-    .then((response) => response);
+  const { data } = await axios.get(`${search_endpoint}=${keyword}`, config);
 
-  return result.data;
+  return data;
 };
 
 export const fetchMovieDetails = async (movie_id) => {
-  const result = await axios
-    .get(`${api_endpoint}/${movie_id}`, {
-      headers: {
-        Authorization: AUTH_KEY,
-      },
-    })
-    .then((response) => response);
-
-  return result;
+  const { data } = await axios.get(`${api_endpoint}/movie/${movie_id}`, config);
+  return data;
 };
 
 export const getTrendingMovies = () => {
-  const result = axios
+  const results = axios
     .get(`${trending_endpoint}`, config)
-    .then((response) => response.data);
+    .then((res) => res.data);
 
-  return result;
+  return results;
 };

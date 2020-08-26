@@ -1,27 +1,30 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { Card } from "../card";
 import { getTrendingMovies } from "../../services";
+import { useStore, useDispatch } from "../../context";
 
 export const CardContainer = () => {
-  const [movies, setMovies] = useState([]);
+  const { trending, searchFiltered, searchText } = useStore();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     let isMounted = true;
     getTrendingMovies().then(({ results }) =>
-      isMounted ? setMovies(results) : null
+      isMounted ? dispatch({ type: "TRENDING", payload: results }) : null
     );
-    console.log("useeffect ran");
     return () => {
       isMounted = false;
     };
-  }, []);
+  }, [trending]);
 
   return (
     <Wrapper>
-      {movies.slice(0, 15).map((movie) => (
-        <Card key={movie.id} {...movie} />
-      ))}
+      {searchFiltered.length && searchText
+        ? searchFiltered.map((movie) => <Card key={movie.id} {...movie} />)
+        : trending
+            .slice(0, 15)
+            .map((movie) => <Card key={movie.id} {...movie} />)}
     </Wrapper>
   );
 };

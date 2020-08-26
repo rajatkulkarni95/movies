@@ -4,6 +4,7 @@ const initialState = {
   trending: [],
   user: {},
   mostPopular: [],
+  searchFiltered: [],
 };
 
 function reducer(state, action) {
@@ -32,6 +33,11 @@ function reducer(state, action) {
       return {
         ...state,
         mostPopular: action.payload,
+      };
+    case "SEARCH_FILTERED":
+      return {
+        ...state,
+        searchFiltered: action.payload,
       };
     default:
       return state;

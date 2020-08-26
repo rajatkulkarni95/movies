@@ -1,19 +1,37 @@
 import React from "react";
 import styled from "styled-components";
 import { Search } from "../search";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
+import { useDispatch } from "../../context";
+import { searchMovies } from "../../services";
 
-export const Navbar = () => (
-  <Wrapper>
-    <Tabs>
-      <StyledLink exact to="/">
-        Discover
-      </StyledLink>
-      <StyledLink to="/browse">Browse</StyledLink>
-    </Tabs>
-    <Search />
-  </Wrapper>
-);
+export const Navbar = () => {
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const handleChange = (e) => {
+    dispatch({ type: "SEARCH", payload: e.target.value });
+    searchMovies(e.target.value).then(({ results }) =>
+      dispatch({ type: "SEARCH_FILTERED", payload: results })
+    );
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    history.push("/browse");
+  };
+
+  return (
+    <Wrapper>
+      <Tabs>
+        <StyledLink exact to="/">
+          Discover
+        </StyledLink>
+        <StyledLink to="/browse">Browse</StyledLink>
+      </Tabs>
+      <Search handleChange={handleChange} handleSubmit={handleSubmit} />
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.header`
   display: flex;
