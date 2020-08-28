@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { GoSearch } from "react-icons/go";
 
 export const Search = ({ handleChange, handleSubmit }) => {
   return (

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { fetchMovieDetails } from "../services";
+import { getMovieDetails } from "../services";
 
 export const ItemDetail = () => {
   let { id } = useParams();
@@ -8,7 +8,7 @@ export const ItemDetail = () => {
   const [movie, setMovie] = useState({});
   useEffect(() => {
     let isMounted = true;
-    fetchMovieDetails(id).then((data) => (isMounted ? setMovie(data) : null));
+    getMovieDetails(id).then((data) => (isMounted ? setMovie(data) : null));
 
     return () => {
       isMounted = false;

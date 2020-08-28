@@ -4,7 +4,7 @@ import axios from "axios";
 const AUTH_KEY = process.env.REACT_APP_AUTH_KEY;
 const api_endpoint = "https://api.themoviedb.org/3";
 const search_endpoint = `${api_endpoint}/search/movie?query`;
-const trending_endpoint = `${api_endpoint}/trending/movie/day`;
+const trending_endpoint = `${api_endpoint}/trending/movie/day?`;
 
 const config = {
   headers: { Authorization: `Bearer ${AUTH_KEY}` },
@@ -16,15 +16,22 @@ export const searchMovies = async (keyword) => {
   return data;
 };
 
-export const fetchMovieDetails = async (movie_id) => {
+export const getMovieDetails = async (movie_id) => {
   const { data } = await axios.get(`${api_endpoint}/movie/${movie_id}`, config);
   return data;
 };
 
-export const getTrendingMovies = () => {
-  const results = axios
-    .get(`${trending_endpoint}`, config)
-    .then((res) => res.data);
+export const getGenres = async () => {
+  const { data } = await axios.get(`${api_endpoint}/genre/movie/list`, config);
 
-  return results;
+  return data;
+};
+
+export const getTrendingMovies = async (pageNumber) => {
+  const { data } = await axios.get(
+    `${trending_endpoint}page=${pageNumber}`,
+    config
+  );
+  console.log(data);
+  return data;
 };
