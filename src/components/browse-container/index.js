@@ -18,7 +18,9 @@ export const BrowseContainer = () => {
   useEffect(() => {
     let isMounted = true;
     getTrendingMovies(page).then(({ results }) =>
-      isMounted ? dispatch({ type: "TRENDING", payload: results }) : null
+      isMounted
+        ? dispatch({ type: "TRENDING", payload: trending.concat(results) })
+        : null
     );
 
     return () => {
@@ -33,11 +35,9 @@ export const BrowseContainer = () => {
           ? searchFiltered.map((movie) => (
               <Card key={movie.id} {...movie} genres={genres} />
             ))
-          : trending
-              .slice(0, 15)
-              .map((movie) => (
-                <Card key={movie.id} {...movie} genres={genres} />
-              ))}
+          : trending.map((movie) => (
+              <Card key={movie.id} {...movie} genres={genres} />
+            ))}
       </Wrapper>
       <Button onClick={() => setPage(page + 1)}>Load More</Button>
     </Stuff>
