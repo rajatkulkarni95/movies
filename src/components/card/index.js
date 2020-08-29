@@ -10,14 +10,22 @@ export const Card = ({
   genres,
   genre_ids,
 }) => {
-  const image_url = `https://image.tmdb.org/t/p/w500/${poster_path}`;
+  const imageUrl = `https://image.tmdb.org/t/p/w500/${poster_path}`;
+  const movieGenres = genre_ids.map((genre) =>
+    genres.find(({ id }) => id === genre)
+  );
 
   return (
     <Wrapper to={`/movie/${id}`}>
-      <Image src={image_url} alt={title} />
+      <Image src={imageUrl} alt={title} />
       <TextBox>
         <Title>{title}</Title>
-        <SubTitle>{release_date}</SubTitle>
+        <SubTitle>
+          {movieGenres.reduce(
+            (accumulator, { name }) => `${accumulator} | ${name}`,
+            ""
+          )}
+        </SubTitle>
       </TextBox>
     </Wrapper>
   );

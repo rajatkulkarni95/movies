@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import { CardContainer } from "../components/card-container";
+import { BrowseContainer } from "../components/browse-container";
 
 export const Browse = () => (
   <Wrapper>
-    <CardContainer />
+    <BrowseContainer />
     <Stuff></Stuff>
   </Wrapper>
 );

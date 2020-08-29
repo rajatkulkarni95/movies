@@ -1,6 +1,7 @@
 const initialState = {
   searchText: "batman",
   isFavourite: false,
+  favourites: [],
   trending: [],
   user: {},
   mostPopular: [],
@@ -15,10 +16,15 @@ function reducer(state, action) {
         ...state,
         searchText: action.payload,
       };
-    case "FAVOURITE":
+    case "IS_FAVOURITE":
       return {
         ...state,
         isFavourite: action.payload,
+      };
+    case "FAVOURITES":
+      return {
+        ...state,
+        favourites: action.payload,
       };
     case "TRENDING":
       return {
@@ -45,6 +51,7 @@ function reducer(state, action) {
         ...state,
         genres: action.payload,
       };
+
     default:
       return state;
   }
