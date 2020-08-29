@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const Header = () => {
   return (
     <Wrapper>
-      <Logo>Movie Database</Logo>
+      <Logo>Filmroll</Logo>
       <Button>Your Account</Button>
     </Wrapper>
   );

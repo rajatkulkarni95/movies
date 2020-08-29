@@ -31,12 +31,12 @@ export const ItemDetail = () => {
 
 const Wrapper = styled.div`
   display: flex;
+  justify-content: space-between;
 `;
 
 const Image = styled.img`
-  width: 100%;
-  height: 100%;
-  display: block;
   object-fit: cover;
+  border-radius: 3px;
   margin-left: 100px;
+  background-color: ${(p) => p.theme.colors.grey};
 `;

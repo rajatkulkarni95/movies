@@ -3,17 +3,25 @@ import styled from "styled-components";
 import { MetaData } from "./Meta";
 import { FavoriteButton } from "./Favourite";
 import { Info } from "./Info";
+import { IMDB } from "./IMDb-Button";
 
-export const ItemDetailCard = ({ title, runtime, overview, movieID }) => {
+export const ItemDetailCard = ({
+  title,
+  runtime,
+  overview,
+  movieID,
+  imdb_id,
+  vote_average,
+}) => {
   console.log(movieID);
   return (
     <Wrapper>
       <MetaData runtime={runtime} />
       <Title>{title}</Title>
-      <div>
-        <span className="btn">IMDb</span>
+      <ButtonContainer>
+        <IMDB id={imdb_id} rating={vote_average} />
         <FavoriteButton movieID={movieID} />
-      </div>
+      </ButtonContainer>
       <Info overview={overview} />
       <div>
         <div>
@@ -55,4 +63,9 @@ const Title = styled.h1`
         font-weight: ${theme.fontWeights.lg.weight};
         word-wrap: break-word;
     `}
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  margin-top: 20px;
 `;

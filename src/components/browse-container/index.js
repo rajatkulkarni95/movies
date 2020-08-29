@@ -38,8 +38,8 @@ export const BrowseContainer = () => {
           : trending.map((movie) => (
               <Card key={movie.id} {...movie} genres={genres} />
             ))}
+        <Button onClick={() => setPage(page + 1)}>Load More</Button>
       </Wrapper>
-      <Button onClick={() => setPage(page + 1)}>Load More</Button>
     </Stuff>
   );
 };
@@ -48,7 +48,7 @@ const Wrapper = styled.div`
   display: grid;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto auto auto auto auto auto;
 `;
 
 const Stuff = styled.div`
@@ -57,7 +57,6 @@ const Stuff = styled.div`
 `;
 
 const Button = styled.button`
-  margin-top: 10px;
   padding: 10px;
   border: none;
   border-radius: 3px;

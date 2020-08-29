@@ -11,15 +11,6 @@ export const Card = ({ id, title, poster_path, genre_ids, genres }) => {
   return (
     <Wrapper to={`/movie/${id}`}>
       <Image src={imageUrl} alt={title} />
-      <TextBox>
-        <Title>{title}</Title>
-        <SubTitle>
-          {movieGenres.reduce(
-            (accumulator, { name }) => `${accumulator} | ${name}`,
-            ""
-          )}
-        </SubTitle>
-      </TextBox>
     </Wrapper>
   );
 };
@@ -27,15 +18,16 @@ export const Card = ({ id, title, poster_path, genre_ids, genres }) => {
 const Wrapper = styled(Link)`
   display: flex;
   flex-direction: column;
-  width: 210px;
+  width: 175px;
   text-decoration: inherit;
   color: inherit;
 `;
 
 const Image = styled.img`
-  height: 280px;
+  height: 220px;
   background-color: ${(p) => p.theme.colors.grey};
   text-align: center;
+  border-radius: 4px;
 `;
 
 const TextBox = styled.div`
