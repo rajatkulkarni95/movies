@@ -1,22 +1,43 @@
 import React from "react";
 import styled from "styled-components";
+import { MoviePoster } from "./Image";
+import { Cast } from "./Cast";
 
-export const Info = ({ overview }) => (
+export const Info = ({ overview, title, poster_path, cast, crew }) => (
   <Wrapper>
-    <Plot>Plot</Plot>
-    <Overview>{overview}</Overview>
+    <MoviePoster title={title} poster_path={poster_path} />
+    <MovieDetail>
+      <Heading>About the Movie</Heading>
+      <Plot>{overview}</Plot>
+      <Cast cast={cast} crew={crew} />
+    </MovieDetail>
   </Wrapper>
 );
 
-const Overview = styled.p`
-  margin-top: 10px;
-  line-height: 1.5;
+const Wrapper = styled.div`
+  display: flex;
+  margin: 20px 0;
 `;
 
-const Wrapper = styled.div`
-  margin: 30px 0;
+const MovieDetail = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const Heading = styled.p`
+  ${({ theme }) => `
+    font-size: ${theme.fontWeights.md.size};
+    font-weight: ${theme.fontWeights.lg.weight};
+    color: ${theme.colors.white};
+    margin: 10px 0;
+`}
 `;
 
 const Plot = styled.p`
-  color: ${(p) => p.theme.colors.lightGrey};
+  ${({ theme }) => `
+    font-size: ${theme.fontWeights.xs.size};
+    font-weight: ${theme.fontWeights.xs.weight};
+    color: ${theme.colors.darkWhite};
+    line-height: 1.5;
+`}
 `;

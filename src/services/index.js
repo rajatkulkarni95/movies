@@ -21,6 +21,14 @@ export const getMovieDetails = async (movie_id) => {
   return data;
 };
 
+export const getCastDetails = async (movie_id) => {
+  const { data } = await axios.get(
+    `${api_endpoint}/movie/${movie_id}/credits`,
+    config
+  );
+  return data;
+};
+
 export const getGenres = async () => {
   const { data } = await axios.get(`${api_endpoint}/genre/movie/list`, config);
 

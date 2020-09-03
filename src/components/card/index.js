@@ -2,11 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const Card = ({ id, title, poster_path, genre_ids, genres }) => {
+export const Card = ({ id, title, poster_path }) => {
   const imageUrl = `https://image.tmdb.org/t/p/w500/${poster_path}`;
-  const movieGenres = genre_ids.map((genre) =>
-    genres.find(({ id }) => id === genre)
-  );
 
   return (
     <Wrapper to={`/movie/${id}`}>

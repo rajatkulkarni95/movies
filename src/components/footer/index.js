@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-export const Header = () => {
+export const Footer = () => {
   return (
     <Wrapper>
-      <Logo>Filmroll</Logo>
+      <Logo>Footer</Logo>
+      <Button>Github</Button>
     </Wrapper>
   );
 };
