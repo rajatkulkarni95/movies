@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Card } from "../card";
 import { getTrendingMovies, getGenres } from "../../services";
@@ -7,7 +7,7 @@ import { useStore, useDispatch } from "../../context";
 export const BrowseContainer = () => {
   const { trending, searchFiltered, searchText, genres } = useStore();
   const dispatch = useDispatch();
-  const [page, setPage] = React.useState(1);
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     getGenres().then(({ genres }) =>

@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import { Search } from "../search";
-import { NavLink, useHistory } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useDispatch } from "../../context";
 import { searchMovies } from "../../services";
 
 export const Navbar = () => {
   const dispatch = useDispatch();
-  const history = useHistory();
+
   const handleChange = (e) => {
     dispatch({ type: "SEARCH", payload: e.target.value });
     searchMovies(e.target.value).then(({ results }) =>
@@ -17,16 +17,17 @@ export const Navbar = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    history.push("/browse");
   };
 
   return (
     <Wrapper>
       <Tabs>
         <StyledLink exact to="/">
-          Discover
+          Trending
         </StyledLink>
-        <StyledLink to="/browse">Browse</StyledLink>
+        <StyledLink exact to="/favourites">
+          Favourites
+        </StyledLink>
       </Tabs>
       <Search handleChange={handleChange} handleSubmit={handleSubmit} />
     </Wrapper>

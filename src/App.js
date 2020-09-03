@@ -7,6 +7,7 @@ import { Header } from "./components/header";
 import { Routes } from "./routes";
 import { StoreProvider } from "./context";
 import { initialState, reducer } from "./reducers";
+import { Footer } from "./components/footer";
 
 function App() {
   return (

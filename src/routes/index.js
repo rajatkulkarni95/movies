@@ -8,9 +8,6 @@ import { ItemDetail } from "../pages/ItemDetail";
 export const Routes = () => (
   <Switch>
     <Route exact path="/">
-      <Discover />
-    </Route>
-    <Route exact path="/browse">
       <Browse />
     </Route>
     <Route exact path="/movie/:id">

@@ -4,7 +4,7 @@ import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { useFavourites } from "../../hooks/useFavourites";
 import { useStore } from "../../context";
 
-export const FavoriteButton = ({ movieID }) => {
+export const FavouriteButton = ({ movieID }) => {
   const { setFavourites } = useFavourites();
   const { favourites } = useStore();
 
@@ -54,7 +54,7 @@ const AddFavourite = styled.button`
     p.isFavourite &&
     css`
       :after {
-        content: " Added";
+        content: " Favourited";
       }
 
       background: #ff4040;

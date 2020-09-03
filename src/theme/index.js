@@ -25,7 +25,7 @@ export const theme = {
       weight: "500",
     },
     lg: {
-      size: "80px",
+      size: "48px",
       weight: "700",
     },
   },
