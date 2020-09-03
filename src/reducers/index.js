@@ -6,7 +6,6 @@ const initialState = {
   user: {},
   mostPopular: [],
   searchFiltered: [],
-  genres: [],
 };
 
 function reducer(state, action) {
@@ -45,11 +44,6 @@ function reducer(state, action) {
       return {
         ...state,
         searchFiltered: action.payload,
-      };
-    case "GENRES":
-      return {
-        ...state,
-        genres: action.payload,
       };
 
     default:

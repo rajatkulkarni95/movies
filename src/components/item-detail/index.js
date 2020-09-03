@@ -11,10 +11,17 @@ export const ItemDetailCard = ({
   genres,
   cast,
   crew,
+  movieID,
 }) => {
   return (
     <Wrapper>
-      <MetaData title={title} vote_average={vote_average} genres={genres} />
+      <MetaData
+        title={title}
+        vote_average={vote_average}
+        genres={genres}
+        movieID={movieID}
+        poster_path={poster_path}
+      />
       <Info
         overview={overview}
         title={title}
