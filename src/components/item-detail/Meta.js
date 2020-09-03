@@ -2,21 +2,31 @@ import React from "react";
 import styled from "styled-components";
 import { FavouriteButton } from "./Favourite";
 
-export const MetaData = ({ title, vote_average, genres }) => {
+export const MetaData = ({
+  title,
+  vote_average,
+  genres,
+  movieID,
+  poster_path,
+}) => {
   return (
     <Meta>
       <Head>
         <Title>{title}</Title>
         <Genre>
           {genres &&
-            genres.reduce((acc, genre) => `${genre.name} & ${acc.name}`)}
+            genres.reduce((acc, genre) => `${genre.name} & ${acc}`, "")}
         </Genre>
       </Head>
       <Right>
         <Score>
           <AverageScore>{vote_average}</AverageScore>/10
         </Score>
-        <FavouriteButton />
+        <FavouriteButton
+          movieID={movieID}
+          poster_path={poster_path}
+          title={title}
+        />
       </Right>
     </Meta>
   );

@@ -29,17 +29,11 @@ export const getCastDetails = async (movie_id) => {
   return data;
 };
 
-export const getGenres = async () => {
-  const { data } = await axios.get(`${api_endpoint}/genre/movie/list`, config);
-
-  return data;
-};
-
 export const getTrendingMovies = async (pageNumber) => {
   const { data } = await axios.get(
     `${trending_endpoint}page=${pageNumber}`,
     config
   );
-  console.log(data);
+
   return data;
 };

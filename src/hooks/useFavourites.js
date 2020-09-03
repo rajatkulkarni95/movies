@@ -7,21 +7,22 @@ export const useFavourites = () => {
   const getFavourites = () => {
     let tempFavourites =
       JSON.parse(localStorage.getItem("movie_favorites")) || [];
+
     dispatch({ type: "FAVOURITES", payload: tempFavourites });
   };
 
-  const setFavourites = (id) => {
+  const setFavourites = (movie) => {
     let tempFavourites = favourites;
 
-    if (tempFavourites.indexOf(id) === -1) {
-      tempFavourites.push(id);
+    if (!tempFavourites.some((fav) => fav.id === movie.id)) {
+      tempFavourites.push(movie);
       localStorage.setItem("movie_favorites", JSON.stringify(tempFavourites));
       dispatch({ type: "FAVOURITES", payload: tempFavourites });
     } else {
-      const index = tempFavourites.indexOf(id);
-      tempFavourites.splice(index, 1);
-      dispatch({ type: "FAVOURITES", payload: tempFavourites });
-      localStorage.setItem("movie_favorites", JSON.stringify(tempFavourites));
+      const filteredFavs = tempFavourites.filter((fav) => fav.id !== movie.id);
+
+      dispatch({ type: "FAVOURITES", payload: filteredFavs });
+      localStorage.setItem("movie_favorites", JSON.stringify(filteredFavs));
     }
   };
 

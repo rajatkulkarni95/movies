@@ -4,15 +4,20 @@ import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 import { useFavourites } from "../../hooks/useFavourites";
 import { useStore } from "../../context";
 
-export const FavouriteButton = ({ movieID }) => {
+export const FavouriteButton = ({ movieID, title, poster_path }) => {
   const { setFavourites } = useFavourites();
   const { favourites } = useStore();
 
-  const isFavourite = favourites.includes(movieID);
+  const isFavourite = favourites.some((fav) => fav.id === movieID);
 
+  const movie = {
+    id: movieID,
+    title: title,
+    poster_path: poster_path,
+  };
   return (
     <AddFavourite
-      onClick={() => setFavourites(movieID)}
+      onClick={() => setFavourites(movie)}
       isFavourite={isFavourite}
     >
       {isFavourite ? (
