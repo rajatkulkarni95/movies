@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
+
 import { useParams } from "react-router-dom";
 import { getMovieDetails, getCastDetails } from "../services";
 import { ItemDetailCard } from "../components/item-detail";

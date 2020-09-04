@@ -26,17 +26,3 @@ const Image = styled.img`
   text-align: center;
   border-radius: 4px;
 `;
-
-const TextBox = styled.div`
-  margin-top: 20px;
-`;
-
-const Title = styled.p`
-  margin-bottom: 2px;
-  word-wrap: break-word;
-`;
-
-const SubTitle = styled.p`
-  font-size: 12px;
-  color: ${(p) => p.theme.colors.lightGrey};
-`;

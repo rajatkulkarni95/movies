@@ -16,14 +16,12 @@ export const BrowseContainer = () => {
   }, [page]);
 
   return (
-    <Stuff>
-      <Wrapper>
-        {searchFiltered.length && searchText
-          ? searchFiltered.map((movie) => <Card key={movie.id} {...movie} />)
-          : trending.map((movie) => <Card key={movie.id} {...movie} />)}
-        <Button onClick={() => setPage(page + 1)}>Load More</Button>
-      </Wrapper>
-    </Stuff>
+    <Wrapper>
+      {searchFiltered.length && searchText
+        ? searchFiltered.map((movie) => <Card key={movie.id} {...movie} />)
+        : trending.map((movie) => <Card key={movie.id} {...movie} />)}
+      <Button onClick={() => setPage(page + 1)}>Load More</Button>
+    </Wrapper>
   );
 };
 
@@ -32,11 +30,6 @@ const Wrapper = styled.div`
   grid-column-gap: 20px;
   grid-row-gap: 20px;
   grid-template-columns: auto auto auto auto auto auto;
-`;
-
-const Stuff = styled.div`
-  display: flex;
-  flex-direction: column;
 `;
 
 const Button = styled.button`
