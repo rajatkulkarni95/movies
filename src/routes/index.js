@@ -12,6 +12,7 @@ export const Routes = () => {
   useEffect(() => {
     getFavourites();
   }, []);
+
   return (
     <Switch>
       <Route exact path="/">

@@ -7,15 +7,13 @@ export const FavouriteContainer = () => {
   const { favourites } = useStore();
 
   return (
-    <Stuff>
-      <Wrapper>
-        {favourites.length ? (
-          favourites.map((movie) => <Card key={movie.id} {...movie} />)
-        ) : (
-          <div>No Favourites</div>
-        )}
-      </Wrapper>
-    </Stuff>
+    <Wrapper>
+      {favourites.length ? (
+        favourites.map((movie) => <Card key={movie.id} {...movie} />)
+      ) : (
+        <div>No Favourites</div>
+      )}
+    </Wrapper>
   );
 };
 
@@ -24,9 +22,4 @@ const Wrapper = styled.div`
   grid-column-gap: 20px;
   grid-row-gap: 20px;
   grid-template-columns: auto auto auto auto auto auto;
-`;
-
-const Stuff = styled.div`
-  display: flex;
-  flex-direction: column;
 `;

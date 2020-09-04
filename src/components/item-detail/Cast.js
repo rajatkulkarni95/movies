@@ -20,7 +20,7 @@ export const Cast = ({ cast, crew }) => {
         <ul>
           {crew &&
             crew
-              .filter((member) => member.job == "Director")
+              .filter((member) => member.job === "Director")
               .map((director) => (
                 <ListItem key={director.id}>{director.name}</ListItem>
               ))}
@@ -31,7 +31,7 @@ export const Cast = ({ cast, crew }) => {
         <ul>
           {crew &&
             crew
-              .filter((member) => member.job == "Screenplay")
+              .filter((member) => member.job === "Screenplay")
               .map((writer) => (
                 <ListItem key={writer.id}>{writer.name}</ListItem>
               ))}
@@ -42,7 +42,7 @@ export const Cast = ({ cast, crew }) => {
         <ul>
           {crew &&
             crew
-              .filter((member) => member.job == "Producer")
+              .filter((member) => member.job === "Producer")
               .map((producer) => (
                 <ListItem key={producer.id}>{producer.name}</ListItem>
               ))}
