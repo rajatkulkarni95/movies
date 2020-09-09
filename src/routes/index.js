@@ -11,6 +11,7 @@ export const Routes = () => {
 
   useEffect(() => {
     getFavourites();
+    // eslint-disable-next-line
   }, []);
 
   return (

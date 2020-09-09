@@ -26,17 +26,7 @@ export const Cast = ({ cast, crew }) => {
               ))}
         </ul>
       </Section>
-      <Section>
-        <Heading>Screenwriter</Heading>
-        <ul>
-          {crew &&
-            crew
-              .filter((member) => member.job === "Screenplay")
-              .map((writer) => (
-                <ListItem key={writer.id}>{writer.name}</ListItem>
-              ))}
-        </ul>
-      </Section>
+
       <Section>
         <Heading>Producer</Heading>
         <ul>
@@ -56,11 +46,20 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 20px 0;
+
+  @media (max-width: ${(p) => p.theme.mobile}) {
+    flex-direction: column;
+    padding: 0 15px;
+  }
 `;
 
 const Section = styled.div`
   display: flex;
   flex-direction: column;
+
+  @media (max-width: ${(p) => p.theme.tablet}) {
+    padding: 0 10px;
+  }
 `;
 
 const Heading = styled.p`

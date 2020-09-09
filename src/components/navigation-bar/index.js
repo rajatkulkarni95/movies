@@ -1,12 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import { Search } from "../search";
-import { NavLink } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useDispatch } from "../../context";
 import { searchMovies } from "../../services";
 
 export const Navbar = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const handleChange = (e) => {
     dispatch({ type: "SEARCH", payload: e.target.value });
@@ -17,18 +18,11 @@ export const Navbar = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    history.push("/");
   };
 
   return (
     <Wrapper>
-      <Tabs>
-        <StyledLink exact to="/">
-          Trending
-        </StyledLink>
-        <StyledLink exact to="/favourites">
-          Favourites
-        </StyledLink>
-      </Tabs>
       <Search handleChange={handleChange} handleSubmit={handleSubmit} />
     </Wrapper>
   );
@@ -36,26 +30,10 @@ export const Navbar = () => {
 
 const Wrapper = styled.header`
   display: flex;
-  margin: 30px 0;
-  justify-content: space-between;
-`;
+  margin: 30px;
 
-const Tabs = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
-
-const StyledLink = styled(NavLink)`
-  margin-right: 20px;
-  text-decoration: none;
-  color: ${(p) => p.theme.colors.darkWhite};
-
-  :hover {
-    color: ${(p) => p.theme.colors.white};
-  }
-
-  &.active {
-    color: ${(p) => p.theme.colors.white};
+  @media (max-width: ${(p) => p.theme.mobile}) {
+    margin: 30px 0;
+    justify-content: center;
   }
 `;
