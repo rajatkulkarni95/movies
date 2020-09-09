@@ -19,7 +19,19 @@ export const FavouriteContainer = () => {
 
 const Wrapper = styled.div`
   display: grid;
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
-  grid-template-columns: auto auto auto auto auto auto;
+  grid-gap: 20px 10px;
+  grid-template-columns: repeat(6, auto);
+
+  @media (max-width: 1100px) {
+    grid-template-columns: repeat(4, auto);
+  }
+
+  @media (max-width: ${(p) => p.theme.tablet}) {
+    grid-template-columns: repeat(3, auto);
+  }
+
+  @media (max-width: ${(p) => p.theme.mobile}) {
+    grid-template-columns: repeat(2, auto);
+    grid-gap: 10px 10px;
+  }
 `;

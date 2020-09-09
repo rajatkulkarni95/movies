@@ -9,6 +9,9 @@ export const theme = {
     red: "#FF4040",
     green: "#2EC4BC",
   },
+  desktop: "1440px",
+  tablet: "768px",
+  mobile: "480px",
 
   font: "Roboto",
   fontWeights: {

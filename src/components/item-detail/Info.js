@@ -17,6 +17,11 @@ export const Info = ({ overview, title, poster_path, cast, crew }) => (
 const Wrapper = styled.div`
   display: flex;
   margin: 20px 0;
+
+  @media (max-width: ${(p) => p.theme.mobile}) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const MovieDetail = styled.div`
@@ -31,6 +36,9 @@ const Heading = styled.p`
     color: ${theme.colors.white};
     margin: 10px 0;
 `}
+  @media (max-width: ${(p) => p.theme.mobile}) {
+    padding: 5px 15px;
+  }
 `;
 
 const Plot = styled.p`
@@ -39,5 +47,9 @@ const Plot = styled.p`
     font-weight: ${theme.fontWeights.xs.weight};
     color: ${theme.colors.darkWhite};
     line-height: 1.5;
+    word-wrap: wrap;
 `}
+  @media (max-width: ${(p) => p.theme.mobile}) {
+    padding: 0 15px;
+  }
 `;

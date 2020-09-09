@@ -20,6 +20,10 @@ const Label = styled.label`
   border: none;
   border-radius: 3px;
   background: ${(p) => p.theme.colors.grey};
+
+  @media (max-width: ${(p) => p.theme.mobile}) {
+    width: calc(${(p) => p.theme.mobile} * 0.7);
+  }
 `;
 
 const Input = styled.input`

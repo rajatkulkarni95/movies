@@ -15,7 +15,9 @@ export const MetaData = ({
         <Title>{title}</Title>
         <Genre>
           {genres &&
-            genres.reduce((acc, genre) => `${genre.name} & ${acc}`, "")}
+            genres
+              .slice(0, 2)
+              .reduce((acc, genre) => `${acc}  ${genre.name} `, "")}
         </Genre>
       </Head>
       <Right>
@@ -36,6 +38,10 @@ const Meta = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: ${(p) => p.theme.mobile}) {
+    padding: 0 15px;
+  }
 `;
 const Head = styled.div`
   display: flex;
@@ -48,6 +54,10 @@ const Title = styled.h1`
         font-weight: ${theme.fontWeights.lg.weight};
         color: ${theme.colors.white};
     `}
+
+  @media (max-width: ${(p) => p.theme.mobile}) {
+    font-size: ${(p) => p.theme.fontWeights.md.size};
+  }
 `;
 
 const Genre = styled.h4`

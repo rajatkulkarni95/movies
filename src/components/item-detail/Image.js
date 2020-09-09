@@ -14,4 +14,10 @@ const Image = styled.img`
   width: 300px;
   height: 400px;
   padding-right: 40px;
+
+  @media (max-width: ${(p) => p.theme.mobile}) {
+    width: calc(${(p) => p.theme.mobile} * 0.7);
+    height: 400px;
+    padding-right: 0px;
+  }
 `;
