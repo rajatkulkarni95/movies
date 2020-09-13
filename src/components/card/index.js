@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import FallbackImage from "../../assets/fallbackimage.png";
 
 export const Card = ({ id, title, poster_path }) => {
   const imageUrl = `https://image.tmdb.org/t/p/w500/${poster_path}`;
@@ -25,4 +26,5 @@ const Image = styled.img`
   background-color: ${(p) => p.theme.colors.grey};
   text-align: center;
   border-radius: 4px;
+  background-image: url(${FallbackImage});
 `;

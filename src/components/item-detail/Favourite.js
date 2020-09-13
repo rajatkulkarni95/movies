@@ -59,7 +59,7 @@ const AddFavourite = styled.button`
     p.isFavourite &&
     css`
       :after {
-        content: " Favourited";
+        content: " Added";
       }
 
       background: #ff4040;

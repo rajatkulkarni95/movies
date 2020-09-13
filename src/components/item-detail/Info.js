@@ -18,6 +18,11 @@ const Wrapper = styled.div`
   display: flex;
   margin: 20px 0;
 
+  @media (max-width: 640px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
   @media (max-width: ${(p) => p.theme.mobile}) {
     flex-direction: column;
     align-items: center;
