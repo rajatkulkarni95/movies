@@ -31,6 +31,7 @@ export const Navbar = () => {
 const Wrapper = styled.header`
   display: flex;
   margin: 30px;
+  width: calc(${window.screen.width} * 0.8) px;
 
   @media (max-width: ${(p) => p.theme.mobile}) {
     margin: 30px 0;

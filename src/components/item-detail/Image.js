@@ -11,8 +11,11 @@ export const MoviePoster = ({ poster_path, title }) => {
 };
 
 const Image = styled.img`
-  width: 300px;
-  height: 400px;
+  display: block;
+  max-width: 300px;
+  max-height: 400px;
+  width: auto;
+  height: auto;
   padding-right: 40px;
 
   @media (max-width: ${(p) => p.theme.mobile}) {

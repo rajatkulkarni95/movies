@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 
 export const Header = () => {
   return (
     <Wrapper>
-      <Logo>Filmroll</Logo>
+      <Logo to="/">Filmroll</Logo>
       <Tabs>
         <StyledLink exact to="/">
           Trending
@@ -29,8 +29,10 @@ const Wrapper = styled.div`
   }
 `;
 
-const Logo = styled.h3`
+const Logo = styled(Link)`
   margin-left: 50px;
+  text-decoration: none;
+  color: inherit;
   font-family: "Rock Salt", cursive;
   @media (max-width: 440px) {
     margin: 5px 0 0 5px;

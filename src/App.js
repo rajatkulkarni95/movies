@@ -24,17 +24,9 @@ function App() {
 }
 
 const Wrapper = styled.div`
-  width: calc(${(p) => p.theme.desktop} * 0.8);
+  width: calc(${window.screen.width} * 0.8) px;
   height: 100%;
   margin: 0 auto;
-
-  @media (max-width: ${(p) => p.theme.tablet}) {
-    width: calc(${(p) => p.theme.tablet} * 0.8);
-  }
-
-  @media (max-width: ${(p) => p.theme.mobile}) {
-    width: calc(${(p) => p.theme.mobile} * 0.8);
-  }
 `;
 
 export default App;

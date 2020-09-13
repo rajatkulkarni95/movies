@@ -18,6 +18,7 @@ export const FavouriteContainer = () => {
 };
 
 const Wrapper = styled.div`
+  padding: 0 30px;
   display: grid;
   grid-gap: 20px 10px;
   grid-template-columns: repeat(6, auto);
@@ -33,5 +34,6 @@ const Wrapper = styled.div`
   @media (max-width: ${(p) => p.theme.mobile}) {
     grid-template-columns: repeat(2, auto);
     grid-gap: 10px 10px;
+    padding: 0 10px;
   }
 `;
