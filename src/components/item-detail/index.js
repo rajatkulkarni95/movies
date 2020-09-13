@@ -36,9 +36,14 @@ export const ItemDetailCard = ({
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 0 20px;
+  width: 80%;
 
   @media (max-width: 1100px) {
     padding: 0 30px;
+  }
+
+  @media (max-width: 960px) {
+    padding: 0 30px;
+    width: 100%;
   }
 `;
