@@ -24,7 +24,7 @@ function App() {
 }
 
 const Wrapper = styled.div`
-  width: calc(${window.screen.width} * 0.8) px;
+  width: 80%;
   height: 100%;
   margin: 0 auto;
 `;
