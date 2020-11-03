@@ -1,6 +1,30 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# FilmRoll
+
+## What is it?
+
+A simple app that allows users to search and check out movies. The design is heavily inspired from the Epic Games Store.
+Uses the TMDB API for all movie details.
+
+## Why?
+
+Decided to take on the project as part of teaching myself React. 
+
+## Takeaways
+
+1. Implemented a redux/flux like pattern using Context and Reducer functions.
+2. Learnt more about Design to Development by trying to incorporate an established design in Epic Games Store.
+3. Local StoraGe manipulation to store favorite movies.
+
+## Future Improvements
+
+1. Add in a user authentication functionality and connect to a database to allow users to take their favorite lists on the go.
+2. Add in support for TV Shows and Personalities.
+3. Add in Trailers for movies.
+
 
 ## Available Scripts
+
+Before running on your machine, install dependencies using `yarn` or `npm install`
 
 In the project directory, you can run:
 
@@ -11,11 +35,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `yarn build`
 
