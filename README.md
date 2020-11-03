@@ -5,6 +5,10 @@
 A simple app that allows users to search and check out movies. The design is heavily inspired from the Epic Games Store.
 Uses the TMDB API for all movie details.
 
+Visit the app here -> https://filmroll.netlify.app/
+
+![App screenshot](./Capture.PNG)
+
 ## Why?
 
 Decided to take on the project as part of teaching myself React. 
